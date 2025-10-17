@@ -86,9 +86,6 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- NVIM CONFIG
 
-require 'custom.remap'
-require 'custom.looknfeel'
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -1040,6 +1037,9 @@ require('lazy').setup({
     },
   },
 })
+
+require 'custom.remap'
+require 'custom.looknfeel'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
