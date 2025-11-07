@@ -15,3 +15,11 @@ vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Paste before from system clipb
 vim.keymap.set('n', '<leader>%s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Search and replace word under cursor' })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+vim.keymap.set('n', '<leader>cl', function()
+  local filepath = vim.fn.expand '%:.'
+  local line_number = vim.fn.line '.'
+  local result = filepath .. ':' .. line_number
+  vim.fn.setreg('+', result)
+  print('Copied: ' .. result)
+end, { desc = '[C]opy cursor [l]ocation with line number' })
