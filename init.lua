@@ -638,7 +638,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-      }
+      },
     },
   },
   {
@@ -685,7 +685,7 @@ require('lazy').setup({
       signature = { enabled = true },
     },
   },
-  {
+  --[[ {
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
@@ -697,7 +697,7 @@ require('lazy').setup({
       }
       vim.cmd.colorscheme 'tokyonight-night'
     end,
-  },
+  }, ]]
   {
     cond = vim.g.vscode == nil,
     'folke/todo-comments.nvim',
@@ -777,6 +777,10 @@ require('lazy').setup({
 
 require 'custom.remap'
 require 'custom.looknfeel'
+
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
