@@ -16,6 +16,10 @@ vim.keymap.set('n', '<leader>%s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
+vim.keymap.set('n', 'gd', function()
+  vim.lsp.buf.definition()
+end)
+
 vim.keymap.set('n', '<leader>cl', function()
   local filepath = vim.fn.expand '%:.'
   local line_number = vim.fn.line '.'
