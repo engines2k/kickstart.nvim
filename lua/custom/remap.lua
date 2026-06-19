@@ -27,3 +27,5 @@ vim.keymap.set('n', '<leader>cl', function()
   vim.fn.setreg('+', result)
   print('Copied: ' .. result)
 end, { desc = '[C]opy cursor [l]ocation with line number' })
+
+vim.keymap.set('n', '<leader>gs', ':G<CR>', { desc = 'Git status' })
