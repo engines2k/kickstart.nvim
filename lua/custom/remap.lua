@@ -29,3 +29,5 @@ vim.keymap.set('n', '<leader>cl', function()
 end, { desc = '[C]opy cursor [l]ocation with line number' })
 
 vim.keymap.set('n', '<leader>gs', ':G<CR>', { desc = 'Git status' })
+
+vim.keymap.set('n', '<leader>gd', ':Gdiffsplit<CR>', { desc = 'Git split diff' })
